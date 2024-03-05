@@ -1,0 +1,12 @@
+import requests
+
+url = "https://moviesdatabase.p.rapidapi.com/titles/seasons/%7BseriesId%7D"
+
+headers = {
+	"X-RapidAPI-Key": "99e3bd15b9msh25532f3dadbf29ap1c5ea2jsn757b12a6e983",
+	"X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.json())
