@@ -1,0 +1,98 @@
+{
+    "Sport": [
+        {
+            "question": "Who won the FIFA World Cup in 2018?",
+            "answer": "France",
+            "options": [
+                "France",
+                "Croatia",
+                "England",
+                "Belgium"
+            ]
+        },
+        {
+            "question": "Which sport uses a shuttlecock?",
+            "answer": "Badminton",
+            "options": [
+                "Badminton",
+                "Tennis",
+                "Table Tennis",
+                "Squash"
+            ]
+        },
+        {
+            "question": "How many players are there in a baseball team?",
+            "answer": "9",
+            "options": [
+                "9",
+                "11",
+                "7",
+                "10"
+            ]
+        }
+    ],
+    "Science": [
+        {
+            "question": "What is the chemical symbol for gold?",
+            "answer": "Au",
+            "options": [
+                "Au",
+                "Ag",
+                "Fe",
+                "Cu"
+            ]
+        },
+        {
+            "question": "Who developed the theory of relativity?",
+            "answer": "Albert Einstein",
+            "options": [
+                "Albert Einstein",
+                "Isaac Newton",
+                "Galileo Galilei",
+                "Stephen Hawking"
+            ]
+        },
+        {
+            "question": "What is the powerhouse of the cell?",
+            "answer": "Mitochondria",
+            "options": [
+                "Nucleus",
+                "Mitochondria",
+                "Ribosome",
+                "Endoplasmic reticulum"
+            ]
+        }
+    ],
+    "History": [
+        {
+            "question": "In which year did World War II end?",
+            "answer": "1945",
+            "options": [
+                "1945",
+                "1939",
+                "1950",
+                "1918"
+            ]
+        },
+        {
+            "question": "Who was the first President of the United States?",
+            "answer": "George Washington",
+            "options": [
+                "George Washington",
+                "Thomas Jefferson",
+                "Abraham Lincoln",
+                "John Adams"
+            ]
+        },
+        {
+            "question": "What ancient civilization built the pyramids?",
+            "answer": "Egyptians",
+            "options": [
+                "Greeks",
+                "Romans",
+                "Egyptians",
+                "Mayans"
+            ]
+        }
+    ]
+}
