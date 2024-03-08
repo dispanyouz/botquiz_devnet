@@ -1,21 +1,25 @@
-## Function that waits user event [press button]
-def press_event(user_id):
-    return events.CallbackQuery(func=lambda e: e.sender_id == user_id)
+# Add a new question
+def add_question(filename):
+    """Add a new question to the JSON file."""
+    category = click.prompt("Choose a category to add a question (Sport/Science/History)", type=str)
+    question = click.prompt("Enter the new question", type=str)
+    answer = click.prompt("Enter the answer to the new question", type=str)
 
+    options = []
+    for i in range(4):
+        option = click.prompt(f"Enter option {i+1}", type=str)
+        options.append(option)
 
-### Quiz command
-@client.on(events.NewMessage(pattern='(?i)/quiz'))
-async def quiz(event):
-    # get the sender
-    sender = await event.get_sender()
-    SENDER = sender.id
+    all_questions = load_questions_from_json(filename)
+    if category not in all_questions:
+        all_questions[category] = []
 
-    # Start a conversation
-    async with client.conversation(await event.get_chat(), exclusive=True) as conv:
-        # get two random numbers between 1 and 10
-        rand1 = randint(1, 10)
-        rand2 = randint(1, 10)
-        # make the sum
-        sum = rand1 + rand2
-        # make another sum based on two different random numbers. This will be used for the wrong option
-        sum_not_true = randint(1, 10) + randint(1, 10)
+    all_questions[category].append({
+        "question": question,
+        "answer": answer,
+        "options": options
+    })
+
+    save_questions_to_json(filename, all_questions)
+    click.echo("Question added successfully!")
+
