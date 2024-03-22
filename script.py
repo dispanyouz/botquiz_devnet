@@ -84,15 +84,30 @@ def save_questions_to_json(filename, all_questions):
 #Batyrkhan Bekzatkhan
 # Add a new question
 def add_question(filename):
-    """Add a new question to the JSON file."""
-    category = click.prompt("Choose a category to add a question (Sport/Science/History)", type=str)
-    question = click.prompt("Enter the new question", type=str)
-    answer = click.prompt("Enter the answer to the new question", type=str)
+    while True:
+        category = input("Choose a category to add a question (Sport/Science/History): ").lower()
+        if category in ['sport', 'science', 'history']:
+            break
+        else:
+            print("Invalid category! Please choose either 'Sport', 'Science', or 'History'.")
 
-    options = []
-    for i in range(4):
-        option = click.prompt(f"Enter option {i+1}", type=str)
-        options.append(option)
+    while True:  # Цикл для повторного запроса ввода вопроса после ошибки
+        question = input("Enter the new question: ")
+        answer = input("Enter the answer to the new question: ")
+
+        options = []
+        for i in range(4):
+            option = input(f"Enter option {i+1}: ")
+            options.append(option)
+
+        # Добавим проверку наличия правильного ответа в списке опций
+        if answer in options:
+            break
+        else:
+            print("The correct answer is not in the options. Please make sure to include it in the options.")
+
+    # Преобразуем категорию в нижний регистр
+    category = category.lower()
 
     all_questions = load_questions_from_json(filename)
     if category not in all_questions:
@@ -105,8 +120,7 @@ def add_question(filename):
     })
 
     save_questions_to_json(filename, all_questions)
-    click.echo("Question added successfully!")
-
+    print("Question added successfully!")
 #Yeltayev Magzhan
 # Authenticate administrator
 def authenticate_admin():
